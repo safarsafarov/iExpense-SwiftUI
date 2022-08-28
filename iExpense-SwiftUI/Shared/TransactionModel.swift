@@ -12,15 +12,20 @@ struct Transaction: Identifiable {
     let date: String
     let institution: String
     let account: String
-    let merchant: String
+    var merchant: String
     let amount: Double
     let type: TransactionType.RawValue
-    let categoryId: Int
-    let category: String
+    var categoryId: Int
+    var category: String
     let isPending: Bool
-    let isTransfer: Bool
-    let isExpense: Bool
-    let isEdited: Bool
+    var isTransfer: Bool
+    var isExpense: Bool
+    var isEdited: Bool
+    
+
+    var dateParsed: Date {
+        date.dateParsed()
+    }
 }
 
 enum TransactionType: String {
