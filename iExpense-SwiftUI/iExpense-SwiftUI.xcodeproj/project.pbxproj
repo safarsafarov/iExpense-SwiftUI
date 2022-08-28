@@ -24,6 +24,8 @@
 		8B88E0A028BBBCB90056D5BB /* TransactionRow.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8B88E09F28BBBCB90056D5BB /* TransactionRow.swift */; };
 		8B88E0A128BBBCB90056D5BB /* TransactionRow.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8B88E09F28BBBCB90056D5BB /* TransactionRow.swift */; };
 		8B906E5828BBE8A7009A2825 /* SwiftUIFontIcon in Frameworks */ = {isa = PBXBuildFile; productRef = 8B906E5728BBE8A7009A2825 /* SwiftUIFontIcon */; };
+		8B906E5A28BBEB16009A2825 /* TransactionListViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8B906E5928BBEB16009A2825 /* TransactionListViewModel.swift */; };
+		8B906E5B28BBEB16009A2825 /* TransactionListViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8B906E5928BBEB16009A2825 /* TransactionListViewModel.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -37,6 +39,7 @@
 		8B88E09728BBBB580056D5BB /* Preview Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = "Preview Assets.xcassets"; sourceTree = "<group>"; };
 		8B88E09C28BBBBC30056D5BB /* PreviewData.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PreviewData.swift; sourceTree = "<group>"; };
 		8B88E09F28BBBCB90056D5BB /* TransactionRow.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TransactionRow.swift; sourceTree = "<group>"; };
+		8B906E5928BBEB16009A2825 /* TransactionListViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TransactionListViewModel.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -74,6 +77,7 @@
 				8B88E09F28BBBCB90056D5BB /* TransactionRow.swift */,
 				8B88E09428BBBA530056D5BB /* TransactionModel.swift */,
 				8B88E09028BBB3A10056D5BB /* Extensions.swift */,
+				8B906E5928BBEB16009A2825 /* TransactionListViewModel.swift */,
 				8B88E07428BBB0CA0056D5BB /* Assets.xcassets */,
 				8B88E09B28BBBBA10056D5BB /* Preview Content */,
 			);
@@ -209,6 +213,7 @@
 				8B88E08428BBB0CA0056D5BB /* ContentView.swift in Sources */,
 				8B88E0A028BBBCB90056D5BB /* TransactionRow.swift in Sources */,
 				8B88E09128BBB3A10056D5BB /* Extensions.swift in Sources */,
+				8B906E5A28BBEB16009A2825 /* TransactionListViewModel.swift in Sources */,
 				8B88E08228BBB0CA0056D5BB /* iExpense_SwiftUIApp.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -222,6 +227,7 @@
 				8B88E08528BBB0CA0056D5BB /* ContentView.swift in Sources */,
 				8B88E0A128BBBCB90056D5BB /* TransactionRow.swift in Sources */,
 				8B88E09228BBB3A10056D5BB /* Extensions.swift in Sources */,
+				8B906E5B28BBEB16009A2825 /* TransactionListViewModel.swift in Sources */,
 				8B88E08328BBB0CA0056D5BB /* iExpense_SwiftUIApp.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

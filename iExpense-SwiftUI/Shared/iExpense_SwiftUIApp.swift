@@ -9,6 +9,8 @@ import SwiftUI
 
 @main
 struct iExpense_SwiftUIApp: App {
+    @StateObject var transactionListVM = TransactionListViewMode()
+    
     var body: some Scene {
         WindowGroup {
             ContentView()
