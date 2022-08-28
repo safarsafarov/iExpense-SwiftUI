@@ -12,7 +12,7 @@ extension Color {
     static let background = Color("Background")
     static let icon = Color("Icon")
     static let systemBackground = Color(uiColor: .systemBackground)
-    
+    static let text = Color("Text")
 }
 
 extension DateFormatter {
