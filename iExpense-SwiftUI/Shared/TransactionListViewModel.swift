@@ -45,6 +45,7 @@ final class TransactionListViewMode: ObservableObject {
                 self?.transactions = result
                 dump(self?.transactions)
             }
-            .store(in: $cancellables)
+//            .store(in: $cancellables)
     }
 }
+
