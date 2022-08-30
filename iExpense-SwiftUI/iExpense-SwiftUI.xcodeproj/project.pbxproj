@@ -32,6 +32,8 @@
 		8B906E5828BBE8A7009A2825 /* SwiftUIFontIcon in Frameworks */ = {isa = PBXBuildFile; productRef = 8B906E5728BBE8A7009A2825 /* SwiftUIFontIcon */; };
 		8B906E5A28BBEB16009A2825 /* TransactionListViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8B906E5928BBEB16009A2825 /* TransactionListViewModel.swift */; };
 		8B906E5B28BBEB16009A2825 /* TransactionListViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8B906E5928BBEB16009A2825 /* TransactionListViewModel.swift */; };
+		8BDD573928BE1B3A007E7540 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 8BDD573828BE1B3A007E7540 /* Assets.xcassets */; };
+		8BDD573A28BE1B3A007E7540 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 8BDD573828BE1B3A007E7540 /* Assets.xcassets */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -48,6 +50,7 @@
 		8B88E09C28BBBBC30056D5BB /* PreviewData.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PreviewData.swift; sourceTree = "<group>"; };
 		8B88E09F28BBBCB90056D5BB /* TransactionRow.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TransactionRow.swift; sourceTree = "<group>"; };
 		8B906E5928BBEB16009A2825 /* TransactionListViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TransactionListViewModel.swift; sourceTree = "<group>"; };
+		8BDD573828BE1B3A007E7540 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; name = Assets.xcassets; path = ../../../../../../../Downloads/AppIcons/Assets.xcassets; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -91,6 +94,7 @@
 				8B906E5928BBEB16009A2825 /* TransactionListViewModel.swift */,
 				8B3CEE3028BE009F0043120D /* TransactionList.swift */,
 				8B88E07428BBB0CA0056D5BB /* Assets.xcassets */,
+				8BDD573828BE1B3A007E7540 /* Assets.xcassets */,
 				8B88E09B28BBBBA10056D5BB /* Preview Content */,
 			);
 			path = Shared;
@@ -204,6 +208,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				8B88E09828BBBB580056D5BB /* Preview Assets.xcassets in Resources */,
+				8BDD573928BE1B3A007E7540 /* Assets.xcassets in Resources */,
 				8B88E08628BBB0CA0056D5BB /* Assets.xcassets in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -213,6 +218,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				8B88E09928BBBB580056D5BB /* Preview Assets.xcassets in Resources */,
+				8BDD573A28BE1B3A007E7540 /* Assets.xcassets in Resources */,
 				8B88E08728BBB0CA0056D5BB /* Assets.xcassets in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
