@@ -7,6 +7,8 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		8B3CEE3128BE009F0043120D /* TransactionList.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8B3CEE3028BE009F0043120D /* TransactionList.swift */; };
+		8B3CEE3228BE009F0043120D /* TransactionList.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8B3CEE3028BE009F0043120D /* TransactionList.swift */; };
 		8B86F5C628BD40F0009A80A0 /* RecentTransactionList.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8B86F5C528BD40F0009A80A0 /* RecentTransactionList.swift */; };
 		8B86F5C728BD40F0009A80A0 /* RecentTransactionList.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8B86F5C528BD40F0009A80A0 /* RecentTransactionList.swift */; };
 		8B88E08228BBB0CA0056D5BB /* iExpense_SwiftUIApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8B88E07228BBB0C80056D5BB /* iExpense_SwiftUIApp.swift */; };
@@ -31,6 +33,7 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		8B3CEE3028BE009F0043120D /* TransactionList.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TransactionList.swift; sourceTree = "<group>"; };
 		8B86F5C528BD40F0009A80A0 /* RecentTransactionList.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RecentTransactionList.swift; sourceTree = "<group>"; };
 		8B88E07228BBB0C80056D5BB /* iExpense_SwiftUIApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = iExpense_SwiftUIApp.swift; sourceTree = "<group>"; };
 		8B88E07328BBB0C80056D5BB /* ContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentView.swift; sourceTree = "<group>"; };
@@ -82,6 +85,7 @@
 				8B88E09028BBB3A10056D5BB /* Extensions.swift */,
 				8B86F5C528BD40F0009A80A0 /* RecentTransactionList.swift */,
 				8B906E5928BBEB16009A2825 /* TransactionListViewModel.swift */,
+				8B3CEE3028BE009F0043120D /* TransactionList.swift */,
 				8B88E07428BBB0CA0056D5BB /* Assets.xcassets */,
 				8B88E09B28BBBBA10056D5BB /* Preview Content */,
 			);
@@ -213,6 +217,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				8B88E09D28BBBBC30056D5BB /* PreviewData.swift in Sources */,
+				8B3CEE3128BE009F0043120D /* TransactionList.swift in Sources */,
 				8B86F5C628BD40F0009A80A0 /* RecentTransactionList.swift in Sources */,
 				8B88E09528BBBA530056D5BB /* TransactionModel.swift in Sources */,
 				8B88E08428BBB0CA0056D5BB /* ContentView.swift in Sources */,
@@ -228,6 +233,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				8B88E09E28BBBBC30056D5BB /* PreviewData.swift in Sources */,
+				8B3CEE3228BE009F0043120D /* TransactionList.swift in Sources */,
 				8B86F5C728BD40F0009A80A0 /* RecentTransactionList.swift in Sources */,
 				8B88E09628BBBA530056D5BB /* TransactionModel.swift in Sources */,
 				8B88E08528BBB0CA0056D5BB /* ContentView.swift in Sources */,
