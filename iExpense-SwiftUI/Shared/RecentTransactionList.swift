@@ -8,18 +8,16 @@
 import SwiftUI
 
 struct RecentTransactionList: View {
-    @EnvironmentObject var transactionListVM: TransactionListViewModel
+    @EnvironmentObject var transactionListViewModel: TransactionListViewModel
     
     var body: some View {
         VStack {
             HStack {
-                // MARK: Header Title
                 Text("Recent Transactions")
                     .bold()
                 
                 Spacer()
                 
-                // MARK: Header Link
                 NavigationLink {
                     TransactionList()
                 } label: {
@@ -32,8 +30,7 @@ struct RecentTransactionList: View {
             }
             .padding(.top)
             
-            // MARK: Recent Transaction List
-            ForEach(Array(transactionListVM.transactions.prefix(5).enumerated()), id: \.element) { index, transaction in
+            ForEach(Array(transactionListViewModel.transactions.prefix(5).enumerated()), id: \.element) { index, transaction in
                 TransactionRow(transaction: transaction)
                 
                 Divider()
@@ -48,17 +45,18 @@ struct RecentTransactionList: View {
 }
 
 struct RecentTransactionList_Previews: PreviewProvider {
-    static let transactionListVM: TransactionListViewModel = {
-        let transactionListVM = TransactionListViewModel()
-        transactionListVM.transactions = transactionListPreviewData
-        return transactionListVM
+    static let transactionListViewModel: TransactionListViewModel = {
+        let transactionListViewModel = TransactionListViewModel()
+        transactionListViewModel.transactions = transactionListPreviewData
+        return transactionListViewModel
     }()
+    
     static var previews: some View {
         Group {
             RecentTransactionList()
             RecentTransactionList()
                 .preferredColorScheme(.dark)
         }
-        .environmentObject(transactionListVM)
+        .environmentObject(transactionListViewModel)
     }
 }

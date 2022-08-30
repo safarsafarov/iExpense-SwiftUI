@@ -9,7 +9,6 @@ import Foundation
 import Combine
 import Collections
 
-
 typealias TransactionGroup = OrderedDictionary<String, [Transaction]>
 typealias TransactionPrefixSum = [(String, Double)]
 
@@ -23,35 +22,35 @@ final class TransactionListViewModel: ObservableObject {
     }
     
     func getTransactions() {
-            guard let url = URL(string: "https://designcode.io/data/transactions.json") else {
-                print("Invalid URL")
-                return
+        guard let url = URL(string: "https://designcode.io/data/transactions.json") else {
+            print("Invalid URL")
+            return
+        }
+        
+        URLSession.shared.dataTaskPublisher(for: url).tryMap { (data, response) -> Data in
+            guard let httpResponse = response as? HTTPURLResponse, httpResponse.statusCode == 200 else {
+                dump(response)
+                throw URLError(.badServerResponse)
             }
             
-            URLSession.shared.dataTaskPublisher(for: url).tryMap { (data, response) -> Data in
-                guard let httpResponse = response as? HTTPURLResponse, httpResponse.statusCode == 200 else {
-                    dump(response)
-                    throw URLError(.badServerResponse)
-                }
-                
-                return data
-            }
-            .decode(type: [Transaction].self, decoder: JSONDecoder())
-            .receive(on: DispatchQueue.main)
-            .sink { completion in
-                switch completion {
-                case .failure(let error):
-                    print("Error fetching transactions:", error.localizedDescription)
-                case .finished:
-                    print("Finished fetching transactions")
-                }
-            } receiveValue: { [weak self] result in
-                self?.transactions = result
-            }
-            .store(in: &cancellables)
+            return data
         }
+        .decode(type: [Transaction].self, decoder: JSONDecoder())
+        .receive(on: DispatchQueue.main)
+        .sink { completion in
+            switch completion {
+            case .failure(let error):
+                print("Error fetching transactions:", error.localizedDescription)
+            case .finished:
+                print("Finished fetching transactions")
+            }
+        } receiveValue: { [weak self] result in
+            self?.transactions = result
+        }
+        .store(in: &cancellables)
+    }
     
-    func groupTransactionByMonth() -> TransactionGroup {
+    func groupTransactionsByMonth() -> TransactionGroup {
         guard !transactions.isEmpty else { return [:] }
         
         let groupedTransactions = TransactionGroup(grouping: transactions) { $0.month }
@@ -60,12 +59,11 @@ final class TransactionListViewModel: ObservableObject {
     }
     
     func accumulateTransactions() -> TransactionPrefixSum {
-        print("accumulateTransactions")
+        
         guard !transactions.isEmpty else { return [] }
         
-        let today = "30/08/2022".dateParsed()
+        let today = "02/17/2022".dateParsed()
         let dateInterval = Calendar.current.dateInterval(of: .month, for: today)!
-        print("dateInterval", dateInterval)
         
         var sum: Double = .zero
         var cumulativeSum = TransactionPrefixSum()
@@ -75,8 +73,10 @@ final class TransactionListViewModel: ObservableObject {
             let dailyTotal = dailyExpenses.reduce(0) { $0 - $1.signedAmount }
             
             sum += dailyTotal
+            sum = sum.roundedTo2Digits()
             cumulativeSum.append((date.formatted(), sum))
         }
+        
         return cumulativeSum
     }
 }

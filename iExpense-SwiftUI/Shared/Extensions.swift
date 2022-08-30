@@ -11,13 +11,12 @@ import SwiftUI
 extension Color {
     static let background = Color("Background")
     static let icon = Color("Icon")
-    static let systemBackground = Color(uiColor: .systemBackground)
     static let text = Color("Text")
+    static let systemBackground = Color(uiColor: .systemBackground)
 }
 
 extension DateFormatter {
     static let allNumericUSA: DateFormatter = {
-        print("Initializing DateFormatter")
         let formatter = DateFormatter()
         formatter.dateFormat = "MM/dd/yyyy"
         
@@ -33,9 +32,14 @@ extension String {
     }
 }
 
-
 extension Date: Strideable {
     func formatted() -> String {
         return self.formatted(.dateTime.year().month().day())
+    }
+}
+
+extension Double {
+    func roundedTo2Digits() -> Double {
+        return (self * 100).rounded() / 100
     }
 }

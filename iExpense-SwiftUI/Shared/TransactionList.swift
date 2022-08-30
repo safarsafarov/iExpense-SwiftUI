@@ -8,47 +8,46 @@
 import SwiftUI
 
 struct TransactionList: View {
-    @EnvironmentObject var transactionListVM: TransactionListViewModel
+    @EnvironmentObject var transactionListViewModel: TransactionListViewModel
+    
     var body: some View {
         VStack {
             List {
-                // MARK: Transaction Groups
-                ForEach(Array(transactionListVM.groupTransactionByMonth()), id: \.key) { month, transactions in
+                ForEach(Array(transactionListViewModel.groupTransactionsByMonth()), id: \.key) { month, transactions in
                     Section {
-                        // MARK: Transaction List
                         ForEach(transactions) { transaction in
                             TransactionRow(transaction: transaction)
                         }
                     } header: {
-                        // MARK: Transaction Month
                         Text(month)
                     }
                     .listSectionSeparator(.hidden)
                 }
             }
-            .navigationTitle("Transactions")
-            .navigationBarTitleDisplayMode(.inline)
+            .listStyle(.plain)
         }
+        .navigationTitle("Transactions")
+        .navigationBarTitleDisplayMode(.inline)
     }
+}
+
+struct TransactionList_Previews: PreviewProvider {
+    static let transactionListViewModel: TransactionListViewModel = {
+        let transactionListViewModel = TransactionListViewModel()
+        transactionListViewModel.transactions = transactionListPreviewData
+        return transactionListViewModel
+    }()
     
-    struct TransactionList_Previews: PreviewProvider {
-        static let transactionListVM: TransactionListViewModel = {
-            let transactionListVM = TransactionListViewModel()
-            transactionListVM.transactions = transactionListPreviewData
-            return transactionListVM
-        }()
-        static var previews: some View {
-            Group {
-                NavigationView {
-                    TransactionList()
-                }
-                NavigationView {
-                    TransactionList()
-                        .preferredColorScheme(.dark)
-                }
+    static var previews: some View {
+        Group {
+            NavigationView {
+                TransactionList()
             }
-            .environmentObject(transactionListVM)
-            
+            NavigationView {
+                TransactionList()
+                    .preferredColorScheme(.dark)
+            }
         }
+        .environmentObject(transactionListViewModel)
     }
 }
