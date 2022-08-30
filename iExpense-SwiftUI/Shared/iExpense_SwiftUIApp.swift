@@ -9,7 +9,7 @@ import SwiftUI
 
 @main
 struct iExpense_SwiftUIApp: App {
-    @StateObject var transactionListVM = TransactionListViewMode()
+    @StateObject var transactionListVM = TransactionListViewModel()
     
     var body: some Scene {
         WindowGroup {

@@ -6,19 +6,36 @@
 //
 
 import SwiftUI
-
+import SwiftUICharts
 
 struct ContentView: View {
+    @EnvironmentObject var transactionListViewModel: TransactionListViewModel
+    
     var body: some View {
         NavigationView {
             ScrollView {
                 VStack(alignment: .leading, spacing: 24) {
-                    // MARK: Title
+                    // Title
                     Text("Overview")
                         .font(.title2)
                         .bold()
                     
-                    // MARK: Transaction List
+                    let data = transactionListViewModel.accumulateTransactions()
+                    
+                    if !data.isEmpty {
+                        let totalExpenses = data.last?.1 ?? 0
+                        CardView {
+                            VStack(alignment: .leading) {
+                                ChartLabel(totalExpenses.formatted(.currency(code: "USD")), type: .title, format: "$%.02f")
+                                LineChart()
+                            }
+                            .background(Color.systemBackground)
+                        }
+                        .data(data)
+                        .chartStyle(ChartStyle(backgroundColor: Color.systemBackground, foregroundColor: ColorGradient(Color.icon.opacity(0.4), Color.icon)))
+                        .frame(height: 300)
+                    }
+                    
                     RecentTransactionList()
                 }
                 .padding()
@@ -27,7 +44,7 @@ struct ContentView: View {
             .background(Color.background)
             .navigationBarTitleDisplayMode(.inline)
             .toolbar {
-                // MARK: Notification Icon
+                // Notification Icon
                 ToolbarItem {
                     Image(systemName: "bell.badge")
                         .symbolRenderingMode(.palette)
@@ -36,22 +53,23 @@ struct ContentView: View {
             }
         }
         .navigationViewStyle(.stack)
+        .accentColor(.primary)
     }
 }
 
 struct ContentView_Previews: PreviewProvider {
-    static let transactionListVM: TransactionListViewMode = {
-        let transactionListVM = TransactionListViewMode()
-        transactionListVM.transactions = transactionListPreviewData
-        return transactionListVM
+    static let transactionListViewModel: TransactionListViewModel = {
+        let transactionListViewModel = TransactionListViewModel()
+        transactionListViewModel.transactions = transactionListPreviewData
+        return transactionListViewModel
     }()
+    
     static var previews: some View {
         Group {
             ContentView()
             ContentView()
                 .preferredColorScheme(.dark)
         }
-        .environmentObject(transactionListVM)
-        
+        .environmentObject(transactionListViewModel)
     }
 }
